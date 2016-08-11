@@ -2,13 +2,13 @@
 <?php
 session_start();
 if (isset($_POST['login'])) {
-	$conn=mysqli_connect('localhost','cont_user','KSWhJycmWzQHCjBW','kfincontman');
+	include "db_connection.php";
 	$email=$_POST['email'];
 	$password=$_POST['password'];
     $result=mysqli_query($conn,'SELECT * from cont_master where email="'.$email.'" and pword="'.$password.'"');
 	if(mysqli_num_rows($result)==1){
 		$_SESSION['email']=$email;
-		header('Location:login.php');
+		header('Location:list.php');
 	}
 else
 	echo "account's INVALID";
