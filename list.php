@@ -18,8 +18,8 @@ while($row=mysqli_fetch_assoc($result))
 		echo "<td>".$row['firstname']."</td>";
 		echo "<td>".$row['lastname']."</td>";
 		echo "<td>".$row['email']."</td>";
-	echo "<td><a href='http://localhost/contact_manager/edit.php?id=".$row['id']."'>Edit</a>&nbsp;
-		<a href='http://localhost/contact_manager/view.php?id=".$row['id']."'>view</a></td>";
+	echo "<td><a href='edit.php?id=".$row['id']."'>Edit</a>&nbsp;
+		<a href='view.php?id=".$row['id']."'>view</a></td>";
 		echo "</tr>";
 }
 mysqli_close($conn);

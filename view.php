@@ -63,7 +63,7 @@ echo "<td>last_name</td>";
 		echo "<h1>Company info</h1>";
 	echo "<tr>";
 		echo "<td>company name</td>";
-		echo "<td>".$row['company name']."</td>";
+		echo "<td>".$row['company_name']."</td>";
 		echo "</tr>";
 		echo "<tr>";
 		echo "<td>designation</td>";
