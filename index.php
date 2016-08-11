@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
-
+session_start();
 if (isset($_POST['login'])) {
-	$conn=mysqli_connect('localhost','root','','db');
+	$conn=mysqli_connect('localhost','cont_user','KSWhJycmWzQHCjBW','kfincontman');
 	$email=$_POST['email'];
 	$password=$_POST['password'];
-    $result=mysqli_query($conn,'SELECT* from cont_master where email="'.email.'" and password="'.password.'"');
+    $result=mysqli_query($conn,'SELECT * from cont_master where email="'.$email.'" and pword="'.$password.'"');
 	if(mysqli_num_rows($result)==1){
 		$_SESSION['email']=$email;
 		header('Location:login.php');
@@ -13,8 +13,12 @@ if (isset($_POST['login'])) {
 else
 	echo "account's INVALID";
 }
-if (isset($_GET['Logout'])) {
-	session_unregister('email');
+if (isset($_GET['action'])) {
+	if($_GET['action']=='logout'){
+
+unset($_SESSION['email']);
+}
+	
 }
 ?>
 <html>
