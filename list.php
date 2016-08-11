@@ -1,4 +1,4 @@
-
+<a href="add.php">ADD
 <a href="index.php?action=logout">Logout</a><br>
 <table>
 	<tr>
