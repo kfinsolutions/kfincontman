@@ -95,6 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 		
 		</form>
 	</tr>
-</table>
+</table><br>
+<a href="list.php">Cancel</a>
 </body>
 </html>

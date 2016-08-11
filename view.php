@@ -81,6 +81,7 @@ echo "<td>last_name</td>";
 mysqli_close($conn);
 ?>
 		
-	</table>
+	</table><br>
+<a href="list.php">Back</a>
 </body>
 </html>
