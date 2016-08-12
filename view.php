@@ -1,4 +1,9 @@
 <!doctype html>
+<?php session_start();
+$login_status=$_SESSION['login'];
+echo $login_status;
+ ?>
+ <a href="index.php?action=logout">Logout</a><br>
 <html>
 <head>
 	<title>view</title>

@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <?php
+
 session_start();
+
 if (isset($_POST['login'])) {
 	include "db_connection.php";
 	$email=$_POST['email'];
 	$password=$_POST['password'];
     $result=mysqli_query($conn,'SELECT * from cont_master where email="'.$email.'" and pword="'.$password.'"');
 	if(mysqli_num_rows($result)==1){
+		$login_status="account login is successfull"."<br>";
+		echo $login_status;
+		$_SESSION['login']=$login_status;
 		$_SESSION['email']=$email;
 		header('Location:list.php');
+		
 	}
-else
+else{$login_status="logout";
+    echo $login_status;
+
 	echo "account's INVALID";
+}
 }
 if (isset($_GET['action'])) {
 	if($_GET['action']=='logout'){
 
 unset($_SESSION['email']);
-}
-	
+}	
 }
 ?>
 <html>
@@ -32,3 +40,4 @@ password:<br/>
 </form>
 </body>
 </html>
+<?endif?>
