@@ -12,7 +12,7 @@ echo $login_status;
 		<th>email</th>
 	</tr>
 <?php
-require "db_connection.php";
+require "include/db_connection.php";
 $sql="SELECT * FROM cont_master";
 $result=mysqli_query($conn,$sql);
 while($row=mysqli_fetch_assoc($result))

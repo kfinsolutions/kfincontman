@@ -4,7 +4,7 @@
 session_start();
 
 if (isset($_POST['login'])) {
-	include "db_connection.php";
+	include "include/db_connection.php";
 	$email=$_POST['email'];
 	$password=$_POST['password'];
     $result=mysqli_query($conn,'SELECT * from cont_master where email="'.$email.'" and pword="'.$password.'"');

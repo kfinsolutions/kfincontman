@@ -1,49 +1,4 @@
-<?php 
-function test_input($str)
-{
-	$str=trim($str);
-	$str=stripslashes($str);
-	$str=htmlspecialchars($str);
-	return $str;
-}
-
-$email=$pword="";
-$emailerr=$pworderr="";
-if($_SERVER["REQUEST_METHOD"] == 'POST')
-{
-			$firstname=$_POST['firstname'];
-			$lastname=$_POST['lastname'];
-			$nickname=$_POST['nickname'];
-			$gender=$_POST['gender'];
-			$mobile=$_POST['mobile'];
-			$phone=$_POST['phone'];
-			$email=$_POST['email'];
-			$company_name=$_POST['company_name'];
-			$designation=$_POST['designation'];
-			$address1=$_POST['address1'];
-			$address2=$_POST['address2'];
-			$city=$_POST['city'];
-			$pincode=$_POST['pincode'];
-			$website=$_POST['website'];
-			$com_address=$_POST['com_address'];
-			$pword=$_POST['pword'];
-	if($email!="" && $pword!="")
-	{
-	$email = test_input($_POST['email']);
-	$pword = test_input($_POST['pword']);	
-		if(!preg_match("/^[0-9 a-z A-Z]*$/",$pword))
-		{
-			$pworderr="Enter the correct password";
-		}
-		if ($emailerr=="" && $pworderr=="") 
-		{
-			include "update.php";	
-
-		}
-	}	
-}
-	
-?>
+<?php include "include/process1.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 	$id=$_GET['id'];
 	session_start();
 	$_SESSION['id']=$id;
-	require "db_connection.php";
+	require "include/db_connection.php";
 	$sql="SELECT * FROM cont_master WHERE id=$id";
 	if($result=mysqli_query($conn,$sql))
 	{
@@ -75,9 +30,11 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 			$city=$row[12];
 			$pincode=$row[13];
 			$website=$row[14];
-			$com_address=$row[15];	
+			$com_address=$row[15];
+			$pword=$row[16];
+			
 		}
-		mysqli_free_result($result);
+		mysqli_free_result($result); //acco
 	}
 	mysqli_close($conn);
 	?>
@@ -93,8 +50,8 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 				<label>Nick name:</label>
 				<input type="text" name="nickname" value="<?= $nickname ?>" required> <br>
 				<label>Gender:</label><br>
-				<input type="radio" name="gender" value="Male" required <?php if($gender == 'Male' || $gender == ""){ echo "checked"; } ?>> Male<br>
-				<input type="radio" name="gender" value="Female" required <?php if($gender == 'Female'){ echo "checked"; } ?>> Female<br>
+				<input type="radio" name="gender" value="male" required <?php if($gender=="male" || $gender=="blank"){echo "checked";} ?>> male<br>
+				<input type="radio" name="gender" value="female" required <?php if($gender=="female"){echo "checked";} ?>> female<br>
 				<label>Mobile number:</label>
 				<input type="text" name="mobile" value="<?= $mobile ?>" required> <br>
 				<label>Phone number:</label>
@@ -111,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 				<label>Address 1:</label>
 				<input type="text" name="address1" value="<?= $address1 ?>" required> <br>
 				<label>Address 2:</label>
-				<input type="text" name="address2" value="<?=  $address2 ?>" required> <br>
+				<input type="text" name="address2" value="<?=  $address2 ?>" > <br>
 				<label>city:</label>
 				<input type="text" name="city" value="<?= $city ?>" required> <br>
 				<label>Pincode:</label>
@@ -119,15 +76,16 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 				<label>Website:</label>
 				<input type="text" name="website" value="<?=  $website ?>" required> <br>
 				<label>Communication Address:</label>
-				<input type="text" name="com_address" value="<?= $com_address ?>" required> <br>
+				<input type="textArea" name="com_address" value="<?= $com_address ?>" required> <br>
+				<input type="checkbox" name="check">Put tick same as address<br>
 		</td>
 		<td><label>Enter your password:</label>
 			<input type="password" name="pword" required> <br>
+			<label>Conform password</label>
+			<input type="password" name="pword2" required><br>
 			<button type="submit" name="submit">update</td>
-		
 		</form>
 	</tr>
-</table><br>
-<a href="list.php">Cancel</a>
+</table>
 </body>
 </html>

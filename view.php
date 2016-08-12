@@ -11,7 +11,7 @@ echo $login_status;
 <body>
 <table style="width:100%">	
 <?php
-require "db_connection.php";
+require "include/db_connection.php";
 $id=$_GET['id'];
 $sql="SELECT * FROM cont_master where id=$id";
 $result=mysqli_query($conn,$sql);
