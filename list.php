@@ -1,7 +1,7 @@
-<?php session_start();
-$login_status=$_SESSION['login'];
-echo $login_status;
- ?>
+<?php 
+session_start();
+if($_SESSION['login'] == "1"):
+?>
 <a href="add.php">ADD<br>
 <a href="index.php?action=logout">Logout</a><br>
 <table>
@@ -27,6 +27,10 @@ while($row=mysqli_fetch_assoc($result))
 		echo "</tr>";
 }
 mysqli_close($conn);
-?>
-	
+?>	
 </table>
+<?php
+else: 
+	header("location:index.php");
+endif;
+?>

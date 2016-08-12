@@ -1,14 +1,14 @@
+<?php 
+session_start();
+if($_SESSION['login'] == "1"):
+?>
 <!doctype html>
-<?php session_start();
-$login_status=$_SESSION['login'];
-echo $login_status;
- ?>
- <a href="index.php?action=logout">Logout</a><br>
 <html>
 <head>
 	<title>view</title>
 </head>
 <body>
+	 <a href="index.php?action=logout">Logout</a><br>
 <table style="width:100%">	
 <?php
 require "include/db_connection.php";
@@ -90,3 +90,8 @@ mysqli_close($conn);
 <a href="list.php">Back</a>
 </body>
 </html>
+<?php
+else: 
+	header("location:index.php");
+endif;
+?>

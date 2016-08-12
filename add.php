@@ -1,4 +1,7 @@
-	
+<?php 
+session_start();
+if($_SESSION['login'] == "1"):
+?>	
 <?php include "include/process2.php"; ?>
 <!DOCTYPE html>
 <html>
@@ -59,3 +62,8 @@
 <a href="list.php">Back</a>
 </body>
 </html>
+<?php
+else: 
+	header("location:index.php");
+endif;
+?>
