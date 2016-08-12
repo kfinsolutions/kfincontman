@@ -56,5 +56,6 @@
 		</form>
 	</tr>
 </table>
+<a href="list.php">Back</a>
 </body>
 </html>
