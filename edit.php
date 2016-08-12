@@ -75,9 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 			$city=$row[12];
 			$pincode=$row[13];
 			$website=$row[14];
-			$com_address=$row[15];
-			$pword=$row[16];
-			
+			$com_address=$row[15];	
 		}
 		mysqli_free_result($result);
 	}
@@ -95,8 +93,8 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 				<label>Nick name:</label>
 				<input type="text" name="nickname" value="<?= $nickname ?>" required> <br>
 				<label>Gender:</label><br>
-				<input type="radio" name="gender" value="<?=  $gender ?>" required> male<br>
-				<input type="radio" name="gender" value="<?=  $gender ?>" required> female<br>
+				<input type="radio" name="gender" value="Male" required <?php if($gender == 'Male' || $gender == ""){ echo "checked"; } ?>> Male<br>
+				<input type="radio" name="gender" value="Female" required <?php if($gender == 'Female'){ echo "checked"; } ?>> Female<br>
 				<label>Mobile number:</label>
 				<input type="text" name="mobile" value="<?= $mobile ?>" required> <br>
 				<label>Phone number:</label>
