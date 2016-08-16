@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 <?php 
 session_start();
+=======
+<?php session_start();
+$login_status=$_SESSION['login'];
+echo $login_status;
+ ?>
+<?php 
+>>>>>>> ganesh
 if($_SESSION['login'] == "1"):
 ?>
 <a href="add.php">ADD<br>

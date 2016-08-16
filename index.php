@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <?php
-
 session_start();
-
 if (isset($_POST['login'])) {
 	include "include/db_connection.php";
 	$email=$_POST['email'];
@@ -13,11 +11,19 @@ if (isset($_POST['login'])) {
 		$_SESSION['login']=$login_status;
 		$_SESSION['email']=$email;
 		header('Location:list.php');		
+<<<<<<< HEAD
 }
 else
 {
 	echo "account is INVALID";
 }
+=======
+}
+else
+{
+	echo "account is INVALID";
+}
+>>>>>>> ganesh
 
 }
 if (isset($_GET['action'])) {
@@ -37,4 +43,11 @@ password:<br/>
 <input type="submit" name="login" value="submit">
 </form>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+<?endif?>
+</html>
+<a href="forgot.php">forgot_password</a>
+>>>>>>> ganesh
