@@ -29,13 +29,13 @@ if($_SESSION['login'] == "1"):
 				<label>Phone number:</label>
 				<input type="text" name="phone"  required> <br>
 				<label>Address 1:</label>
-				<input type="text" name="address1"  required> <br>
+				<input type="text" name="address1" id="address1" value="<?= "$address1" ?>" required> <br>
 				<label>Address 2:</label>
-				<input type="text" name="address2"  required> <br>
+				<input type="text" name="address2" id="address2" value="<?= "$address2" ?>" > <br>
 				<label>city:</label>
-				<input type="text" name="city" required> <br>
+				<input type="text" name="city" id="city" value="<?= "$city" ?>" required><br>
 				<label>Pincode:</label>
-				<input type="text" name="pincode" required> <br>
+				<input type="text" name="pincode" id="pincode" value="<?= "$pincode" ?>" required> <br>
 				<label>Email:</label>
 				<input type="text" name="email"  required> <br>	
 		</td>
@@ -48,18 +48,14 @@ if($_SESSION['login'] == "1"):
 				<label>Website:</label>
 				<input type="text" name="website" required> <br>
 				<label>Communication Address:</label><br>
-				<textarea name="com_address" id="c_address" required></textarea><br>
-<<<<<<< HEAD
+				<textarea name="com_address" id="c_address"  required><?= $com_address ?></textarea><br>
 				<input type="checkbox" onclick="copyAdd()"> Same as above<br><br>
 				<label>Password</label>
 				<input type="password" name="pword" required> <br>
 				<label>Conform password</label>
 				<input type="password" name="pword2" required><br>
-				<button type="submit" name="submit">Add <br>
-=======
-				<input type="button" value="Same as of above" onclick="copyAdd()"><br>
->>>>>>> parent of c6a374f... Bug fixes @Keerthi
-		</td>
+				<button type="submit" name="submit">Add</button> <br>		
+			</td>
 		</form>
 	</tr>
 </table>
