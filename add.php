@@ -45,33 +45,18 @@ if($_SESSION['login'] == "1"):
 				<input type="text" name="company_name"  required> <br>
 				<label>Destignation:</label>
 				<input type="text" name="designation"  required> <br>
-<<<<<<< HEAD
 				<label>Website:</label>
 				<input type="text" name="website" required> <br>
-				<label>Communication Address:</label>
-				<input type="text" name="com_address" required> <br>
-				<input type="checkbox" name="check">Put tick same as address<br><br>
-				<label>Password</label>
-				<input type="password" name="pword" required> <br>
-				<label>Conform password</label>
-				<input type="password" name="pword2" required><br>
-				<button type="submit" name="submit">Add <br>
-				
-=======
-				<label>Address 1:</label>
-				<input type="text" name="address1" id="address1" required> <br>
-				<label>Address 2:</label>
-				<input type="text" name="address2" id="address2" required> <br>
-				<label>city:</label>
-				<input type="text" name="city" id="city" required> <br>
-				<label>Pincode:</label>
-				<input type="text" name="pincode" id="pincode" required> <br>
 				<label>Website:</label>
 				<input type="text" name="website" required> <br>
 				<label>Communication Address:</label><br>
 				<textarea name="com_address" id="c_address" required></textarea><br>
 				<input type="checkbox" onclick="copyAdd()"> Same as above<br><br>
->>>>>>> c6a374fda2e4224eef7228a8c3fbd1490572b243
+				<label>Password</label>
+				<input type="password" name="pword" required> <br>
+				<label>Conform password</label>
+				<input type="password" name="pword2" required><br>
+				<button type="submit" name="submit">Add <br>
 		</td>
 		</form>
 	</tr>

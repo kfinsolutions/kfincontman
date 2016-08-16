@@ -76,39 +76,16 @@ if($_SESSION['login'] == "1"):
 				<input type="text" name="company_name" value="<?=  $company_name ?>" required> <br>
 				<label>Destignation:</label>
 				<input type="text" name="designation" value="<?= $designation ?>" required> <br>
-<<<<<<< HEAD
-				<label>Website:</label>
-				<input type="text" name="website" value="<?=  $website ?>" required> <br>
-				<label>Communication Address:</label>
-				<input type="textArea" name="com_address" value="<?= $com_address ?>" required> <br>
-				<input type="checkbox" name="check">Put tick same as address<br><br>
-				<label>Enter your password:</label>
-				<input type="password" name="pword" required> <br>
-				<label>Conform password</label>
-				<input type="password" name="pword2" required><br>
-				<button type="submit" name="submit">update<br>
-		</td>		
-=======
-				<label>Address 1:</label>
-				<input type="text" name="address1" id="address1" value="<?= $address1 ?>" required> <br>
-				<label>Address 2:</label>
-				<input type="text" name="address2" id="address2" value="<?=  $address2 ?>" > <br>
-				<label>city:</label>
-				<input type="text" name="city" id="city" value="<?= $city ?>" required> <br>
-				<label>Pincode:</label>
-				<input type="text" name="pincode" id="pincode" value="<?= $pincode ?>" required> <br>
 				<label>Website:</label>
 				<input type="text" name="website" value="<?=  $website ?>" required> <br>
 				<label>Communication Address:</label><br>
 				<textArea name="com_address" id="c_address" required><?= $com_address ?></textarea> <br>
-				<input type="checkbox" onclick="copyAdd()"> Same as above<br>
-		</td>
-		<td><label>Enter your password:</label>
-			<input type="password" name="pword" required> <br>
-			<label>Conform password</label>
-			<input type="password" name="pword2" required><br>
-			<button type="submit" name="submit">update</td>
->>>>>>> c6a374fda2e4224eef7228a8c3fbd1490572b243
+				<input type="checkbox" onclick="copyAdd()"> Same as above<br><br>
+				<label>Enter your password:</label>
+				<input type="password" name="pword" required> <br>
+				<label>Conform password</label>
+				<input type="password" name="pword2" required><br>
+				<button type="submit" name="submit">update</td>
 		</form>
 	</tr>
 </table>
