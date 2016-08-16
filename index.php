@@ -4,29 +4,27 @@
 session_start();
 
 if (isset($_POST['login'])) {
-	include "db_connection.php";
+	include "include/db_connection.php";
 	$email=$_POST['email'];
 	$password=$_POST['password'];
     $result=mysqli_query($conn,'SELECT * from cont_master where email="'.$email.'" and pword="'.$password.'"');
 	if(mysqli_num_rows($result)==1){
-		$login_status="account login is successfull"."<br>";
-		echo $login_status;
+		$login_status=1;
 		$_SESSION['login']=$login_status;
 		$_SESSION['email']=$email;
-		header('Location:list.php');
-		
-	}
-else{$login_status="logout";
-    echo $login_status;
-
-	echo "account's INVALID";
+		header('Location:list.php');		
 }
+else
+{
+	echo "account is INVALID";
+}
+
 }
 if (isset($_GET['action'])) {
 	if($_GET['action']=='logout'){
-
-unset($_SESSION['email']);
-}	
+		unset($_SESSION['email']);
+		unset($_SESSION['login']);
+	}
 }
 ?>
 <html>
@@ -39,5 +37,9 @@ password:<br/>
 <input type="submit" name="login" value="submit">
 </form>
 </body>
+<<<<<<< HEAD
 </html>
 <?endif?>
+=======
+</html>
+>>>>>>> 83d01d43c09a3c00915d5dea7a7a23b703b4828a
