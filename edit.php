@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if($_SESSION['login'] == "1"):
+?>
 <?php include "include/process1.php"; ?>
 <!DOCTYPE html>
 <html>
@@ -8,7 +12,6 @@
 <body>
 <?php 
 	$id=$_GET['id'];
-	session_start();
 	$_SESSION['id']=$id;
 	require "include/db_connection.php";
 	$sql="SELECT * FROM cont_master WHERE id=$id";
@@ -73,6 +76,7 @@
 				<input type="text" name="company_name" value="<?=  $company_name ?>" required> <br>
 				<label>Destignation:</label>
 				<input type="text" name="designation" value="<?= $designation ?>" required> <br>
+<<<<<<< HEAD
 				<label>Website:</label>
 				<input type="text" name="website" value="<?=  $website ?>" required> <br>
 				<label>Communication Address:</label>
@@ -84,9 +88,46 @@
 				<input type="password" name="pword2" required><br>
 				<button type="submit" name="submit">update<br>
 		</td>		
+=======
+				<label>Address 1:</label>
+				<input type="text" name="address1" id="address1" value="<?= $address1 ?>" required> <br>
+				<label>Address 2:</label>
+				<input type="text" name="address2" id="address2" value="<?=  $address2 ?>" > <br>
+				<label>city:</label>
+				<input type="text" name="city" id="city" value="<?= $city ?>" required> <br>
+				<label>Pincode:</label>
+				<input type="text" name="pincode" id="pincode" value="<?= $pincode ?>" required> <br>
+				<label>Website:</label>
+				<input type="text" name="website" value="<?=  $website ?>" required> <br>
+				<label>Communication Address:</label><br>
+				<textArea name="com_address" id="c_address" required><?= $com_address ?></textarea> <br>
+				<input type="checkbox" onclick="copyAdd()"> Same as above<br>
+		</td>
+		<td><label>Enter your password:</label>
+			<input type="password" name="pword" required> <br>
+			<label>Conform password</label>
+			<input type="password" name="pword2" required><br>
+			<button type="submit" name="submit">update</td>
+>>>>>>> c6a374fda2e4224eef7228a8c3fbd1490572b243
 		</form>
 	</tr>
 </table>
 <a href="list.php">Back</a>
+<script>
+	function copyAdd(){
+		address1 = document.getElementById("address1").value;
+		address2 = document.getElementById("address2").value;
+		city = document.getElementById("city").value;
+		pincode = document.getElementById("pincode").value;
+		com_address = address1+","+address2+","+city+" - "+pincode;
+		alert("Are Sure you want to copy the address from above");
+		document.getElementById("c_address").value = com_address;
+	}
+</script>
 </body>
 </html>
+<?php
+else: 
+	header("location:index.php");
+endif;
+?>

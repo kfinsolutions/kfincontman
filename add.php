@@ -1,4 +1,7 @@
-	
+<?php 
+session_start();
+if($_SESSION['login'] == "1"):
+?>	
 <?php include "include/process2.php"; ?>
 <!DOCTYPE html>
 <html>
@@ -42,6 +45,7 @@
 				<input type="text" name="company_name"  required> <br>
 				<label>Destignation:</label>
 				<input type="text" name="designation"  required> <br>
+<<<<<<< HEAD
 				<label>Website:</label>
 				<input type="text" name="website" required> <br>
 				<label>Communication Address:</label>
@@ -53,10 +57,41 @@
 				<input type="password" name="pword2" required><br>
 				<button type="submit" name="submit">Add <br>
 				
+=======
+				<label>Address 1:</label>
+				<input type="text" name="address1" id="address1" required> <br>
+				<label>Address 2:</label>
+				<input type="text" name="address2" id="address2" required> <br>
+				<label>city:</label>
+				<input type="text" name="city" id="city" required> <br>
+				<label>Pincode:</label>
+				<input type="text" name="pincode" id="pincode" required> <br>
+				<label>Website:</label>
+				<input type="text" name="website" required> <br>
+				<label>Communication Address:</label><br>
+				<textarea name="com_address" id="c_address" required></textarea><br>
+				<input type="checkbox" onclick="copyAdd()"> Same as above<br><br>
+>>>>>>> c6a374fda2e4224eef7228a8c3fbd1490572b243
 		</td>
 		</form>
 	</tr>
 </table>
 <a href="list.php">Back</a>
+<script>
+	function copyAdd(){
+		address1 = document.getElementById("address1").value;
+		address2 = document.getElementById("address2").value;
+		city = document.getElementById("city").value;
+		pincode = document.getElementById("pincode").value;
+		com_address = address1+","+address2+","+city+" - "+pincode;
+		alert("Are Sure you want to copy the address from above");
+		document.getElementById("c_address").value = com_address;
+	}
+</script>
 </body>
 </html>
+<?php
+else: 
+	header("location:index.php");
+endif;
+?>
