@@ -59,6 +59,14 @@ if($_SESSION['login'] == "1"):
 				<input type="text" name="mobile" value="<?= $mobile ?>" required> <br>
 				<label>Phone number:</label>
 				<input type="text" name="phone" value="<?=  $phone ?>" required> <br>
+				<label>Address 1:</label>
+				<input type="text" name="address1" value="<?= $address1 ?>" required> <br>
+				<label>Address 2:</label>
+				<input type="text" name="address2" value="<?=  $address2 ?>" > <br>
+				<label>city:</label>
+				<input type="text" name="city" value="<?= $city ?>" required> <br>
+				<label>Pincode:</label>
+				<input type="text" name="pincode" value="<?= $pincode ?>" required> <br>
 				<label>Email:</label>
 				<input type="text" name="email" value="<?= $email ?>" required> <br>	
 		</td>
@@ -68,25 +76,16 @@ if($_SESSION['login'] == "1"):
 				<input type="text" name="company_name" value="<?=  $company_name ?>" required> <br>
 				<label>Destignation:</label>
 				<input type="text" name="designation" value="<?= $designation ?>" required> <br>
-				<label>Address 1:</label>
-				<input type="text" name="address1" id="address1" value="<?= $address1 ?>" required> <br>
-				<label>Address 2:</label>
-				<input type="text" name="address2" id="address2" value="<?=  $address2 ?>" > <br>
-				<label>city:</label>
-				<input type="text" name="city" id="city" value="<?= $city ?>" required> <br>
-				<label>Pincode:</label>
-				<input type="text" name="pincode" id="pincode" value="<?= $pincode ?>" required> <br>
 				<label>Website:</label>
 				<input type="text" name="website" value="<?=  $website ?>" required> <br>
 				<label>Communication Address:</label><br>
 				<textArea name="com_address" id="c_address" required><?= $com_address ?></textarea> <br>
-				<input type="checkbox" onclick="copyAdd()"> Same as above<br>
-		</td>
-		<td><label>Enter your password:</label>
-			<input type="password" name="pword" required> <br>
-			<label>Conform password</label>
-			<input type="password" name="pword2" required><br>
-			<button type="submit" name="submit">update</td>
+				<input type="checkbox" onclick="copyAdd()"> Same as above<br><br>
+				<label>Enter your password:</label>
+				<input type="password" name="pword" required> <br>
+				<label>Conform password</label>
+				<input type="password" name="pword2" required><br>
+				<button type="submit" name="submit">update</td>
 		</form>
 	</tr>
 </table>

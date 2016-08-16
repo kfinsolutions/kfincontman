@@ -37,6 +37,9 @@ password:<br/>
 <input type="submit" name="login" value="submit">
 </form>
 </body>
+<<<<<<< HEAD
 </html>
-
-
+<?endif?>
+=======
+</html>
+>>>>>>> 83d01d43c09a3c00915d5dea7a7a23b703b4828a
