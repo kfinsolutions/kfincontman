@@ -1,16 +1,30 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php 
 session_start();
 =======
+=======
+>>>>>>> master
 <?php session_start();
 $login_status=$_SESSION['login'];
 echo $login_status;
  ?>
+<<<<<<< HEAD
 <?php 
 >>>>>>> ganesh
 if($_SESSION['login'] == "1"):
 ?>
 <a href="add.php">ADD<br>
+=======
+<a href="add.php">ADD<br/>
+=======
+<?php 
+session_start();
+if($_SESSION['login'] == "1"):
+?>
+<a href="add.php">ADD<br>
+>>>>>>> 83d01d43c09a3c00915d5dea7a7a23b703b4828a
+>>>>>>> master
 <a href="index.php?action=logout">Logout</a><br>
 <table>
 	<tr>

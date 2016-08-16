@@ -44,6 +44,7 @@ password:<br/>
 </form>
 </body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </html>
 =======
 </html>
@@ -51,3 +52,10 @@ password:<br/>
 </html>
 <a href="forgot.php">forgot_password</a>
 >>>>>>> ganesh
+=======
+</html>
+<?endif?>
+=======
+</html>
+>>>>>>> 83d01d43c09a3c00915d5dea7a7a23b703b4828a
+>>>>>>> master
