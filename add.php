@@ -49,12 +49,16 @@ if($_SESSION['login'] == "1"):
 				<input type="text" name="website" required> <br>
 				<label>Communication Address:</label><br>
 				<textarea name="com_address" id="c_address" required></textarea><br>
+<<<<<<< HEAD
 				<input type="checkbox" onclick="copyAdd()"> Same as above<br><br>
 				<label>Password</label>
 				<input type="password" name="pword" required> <br>
 				<label>Conform password</label>
 				<input type="password" name="pword2" required><br>
 				<button type="submit" name="submit">Add <br>
+=======
+				<input type="button" value="Same as of above" onclick="copyAdd()"><br>
+>>>>>>> parent of c6a374f... Bug fixes @Keerthi
 		</td>
 		</form>
 	</tr>
@@ -67,7 +71,7 @@ if($_SESSION['login'] == "1"):
 		city = document.getElementById("city").value;
 		pincode = document.getElementById("pincode").value;
 		com_address = address1+","+address2+","+city+" - "+pincode;
-		alert("Are Sure you want to copy the address from above");
+		alert(com_address);
 		document.getElementById("c_address").value = com_address;
 	}
 </script>
