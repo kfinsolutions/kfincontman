@@ -3,6 +3,11 @@ $login_status=$_SESSION['login'];
 echo $login_status;
  ?>
 <a href="add.php">ADD<br/>
+<?php 
+session_start();
+if($_SESSION['login'] == "1"):
+?>
+<a href="add.php">ADD<br>
 <a href="index.php?action=logout">Logout</a><br>
 <table>
 	<tr>
@@ -12,7 +17,7 @@ echo $login_status;
 		<th>email</th>
 	</tr>
 <?php
-require "db_connection.php";
+require "include/db_connection.php";
 $sql="SELECT * FROM cont_master";
 $result=mysqli_query($conn,$sql);
 while($row=mysqli_fetch_assoc($result))
@@ -27,6 +32,10 @@ while($row=mysqli_fetch_assoc($result))
 		echo "</tr>";
 }
 mysqli_close($conn);
-?>
-	
+?>	
 </table>
+<?php
+else: 
+	header("location:index.php");
+endif;
+?>
