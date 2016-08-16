@@ -2,7 +2,7 @@
 $login_status=$_SESSION['login'];
 echo $login_status;
  ?>
-<a href="add.php">ADD<br>
+<a href="add.php">ADD<br/>
 <a href="index.php?action=logout">Logout</a><br>
 <table>
 	<tr>
