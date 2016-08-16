@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <?php
-
 session_start();
-
 if (isset($_POST['login'])) {
 	include "include/db_connection.php";
 	$email=$_POST['email'];
@@ -40,3 +38,4 @@ password:<br/>
 </html>
 <?endif?>
 </html>
+<a href="forgot.php">forgot_password</a>

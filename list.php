@@ -2,9 +2,7 @@
 $login_status=$_SESSION['login'];
 echo $login_status;
  ?>
-<a href="add.php">ADD<br/>
 <?php 
-session_start();
 if($_SESSION['login'] == "1"):
 ?>
 <a href="add.php">ADD<br>
