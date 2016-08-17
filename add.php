@@ -1,5 +1,8 @@
-
-<?php include "include/process2.php"; ?>
+<?php 
+session_start();
+if($_SESSION['login'] == "1"):
+include "include/process2.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -375,7 +378,7 @@
 						<h2><i class="halflings-icon white edit"></i><span class="break"></span>personal information</h2>
 						</div>
 						<div class="box-content">
-						<form class="form-horizontal" style="padding:50px;">
+						<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
 						  <fieldset>
 				<label>First name:</label>
 				<input type="text" name="firstname" value="<?= "$firstname" ?>" required><?= "$firstnameerr" ?><br>
@@ -402,7 +405,6 @@
 				<input type="text" name="email"  required><?= "$emailerr" ?><br>
                 </fieldset>
 
-            </form>
 						</div> 
 						</div>
 						</div>
@@ -412,7 +414,6 @@
 						<h2><i class="halflings-icon white edit"></i><span class="break"></span>company information</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" style="padding:50px;">
 						  <fieldset>
 							<div class="control-group">
 								<label>Company name:</label>
@@ -528,3 +529,8 @@
 </script>
 				</body>
 				</html>
+<?php
+else: 
+	header("location:index.php");
+endif;
+?>
