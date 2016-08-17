@@ -60,13 +60,13 @@
 							
 							<div class="input-prepend" title="Username">
 								<span class="add-on"><i class="halflings-icon user"></i></span>
-								<input class="input-large span10" name="username" id="username" type="text" placeholder="type username"/>
+								<input class="input-large span10" name="email" id="username" type="email" placeholder="type your email"/>
 							</div>
 							<div class="clearfix"></div>
 
 							<div class="input-prepend" title="Password">
 								<span class="add-on"><i class="halflings-icon lock"></i></span>
-								<input class="input-large span10" name="password" id="password" type="password" placeholder="type password"/>
+								<input class="input-large span10" name="password" id="password" type="password" placeholder="type your password"/>
 							</div>
 							<div class="clearfix"></div>
 							
@@ -108,18 +108,49 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           <h1 class="text-center">FORGOT PASSWORD</h1>
       </div>
+<?php 
+if (isset($_POST['forgot'])) {
+require "include/db_connection.php";
+$email=$_POST['email'];
+	$sql="SELECT id from cont_master where email='".$email."'";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	$id = $row['id'];
+	$count=count($row);
+
+if ($count!=0) {
+$new_password=rand(100000 , 999999);
+$sql = "UPDATE cont_master set pword='".$new_password."' WHERE id='".$id."'";
+if(mysqli_query($conn, $sql)){
+	$subject="login information";
+	$message="your message has been changed to $new_password";
+	$from="from:ganesh@gmail.com";
+	//mail($email,$subject,$message,$from);
+	echo "your password has been mailed to you.";
+} else {
+	echo "Error resetting password";
+}
+}
+else
+{
+	echo "this mail does not exist";
+
+}
+	mysqli_close($conn);
+}
+ ?>
       <div class="modal-body">
           <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="text-center">
-                          <form>
+                          <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>">
                             <div class="panel-body">
                                 <fieldset>
                                     <div class="form-group">
                                         <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="email">
                                     </div>
-                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit" name="forgot">
                                 </fieldset>
                             </div>
                             </form>
