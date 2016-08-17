@@ -2,95 +2,538 @@
 session_start();
 if($_SESSION['login'] == "1"):
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>view</title>
-</head>
-<body>
-	 <a href="index.php?action=logout">Logout</a><br>
-<table style="width:100%">	
-<?php
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<meta name="description" content="Bootstrap Metro Dashboard">
+	<meta name="author" content="Dennis Ji">
+	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link id="base-style" href="css/style.css" rel="stylesheet">
+	<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+	<!-- end: CSS -->
+	
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+		<![endif]-->
+
+	<!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+		<![endif]-->
+		
+		<!-- start: Favicon -->
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<!-- end: Favicon -->
+
+		
+		
+		
+	</head>
+
+	<body>
+		<!-- start: Header -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="index.php"><span>JANUX</span></a>
+
+					<!-- start: Header Menu -->
+					<div class="nav-no-collapse header-nav">
+						<ul class="nav pull-right">
+							<li class="dropdown hidden-phone">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									<i class="icon-bell"></i>
+									<span class="badge red">
+										7 </span>
+									</a>
+									<ul class="dropdown-menu notifications">
+										<li class="dropdown-menu-title">
+											<span>You have 11 notifications</span>
+											<a href="#refresh"><i class="icon-repeat"></i></a>
+										</li>	
+										<li>
+											<a href="#">
+												<span class="icon blue"><i class="icon-user"></i></span>
+												<span class="message">New user registration</span>
+												<span class="time">1 min</span> 
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon green"><i class="icon-comment-alt"></i></span>
+												<span class="message">New comment</span>
+												<span class="time">7 min</span> 
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon green"><i class="icon-comment-alt"></i></span>
+												<span class="message">New comment</span>
+												<span class="time">8 min</span> 
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon green"><i class="icon-comment-alt"></i></span>
+												<span class="message">New comment</span>
+												<span class="time">16 min</span> 
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon blue"><i class="icon-user"></i></span>
+												<span class="message">New user registration</span>
+												<span class="time">36 min</span> 
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon yellow"><i class="icon-shopping-cart"></i></span>
+												<span class="message">2 items sold</span>
+												<span class="time">1 hour</span> 
+											</a>
+										</li>
+										<li class="warning">
+											<a href="#">
+												<span class="icon red"><i class="icon-user"></i></span>
+												<span class="message">User deleted account</span>
+												<span class="time">2 hour</span> 
+											</a>
+										</li>
+										<li class="warning">
+											<a href="#">
+												<span class="icon red"><i class="icon-shopping-cart"></i></span>
+												<span class="message">New comment</span>
+												<span class="time">6 hour</span> 
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon green"><i class="icon-comment-alt"></i></span>
+												<span class="message">New comment</span>
+												<span class="time">yesterday</span> 
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="icon blue"><i class="icon-user"></i></span>
+												<span class="message">New user registration</span>
+												<span class="time">yesterday</span> 
+											</a>
+										</li>
+										<li class="dropdown-menu-sub-footer">
+											<a>View all notifications</a>
+										</li>	
+									</ul>
+								</li>
+								<!-- start: Notifications Dropdown -->
+								<li class="dropdown hidden-phone">
+									<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+										<i class="icon-calendar"></i>
+										<span class="badge red">
+											5 </span>
+										</a>
+										<ul class="dropdown-menu tasks">
+											<li class="dropdown-menu-title">
+												<span>You have 17 tasks in progress</span>
+												<a href="#refresh"><i class="icon-repeat"></i></a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="header">
+														<span class="title">iOS Development</span>
+														<span class="percent"></span>
+													</span>
+													<div class="taskProgress progressSlim red">80</div> 
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="header">
+														<span class="title">Android Development</span>
+														<span class="percent"></span>
+													</span>
+													<div class="taskProgress progressSlim green">47</div> 
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="header">
+														<span class="title">ARM Development</span>
+														<span class="percent"></span>
+													</span>
+													<div class="taskProgress progressSlim yellow">32</div> 
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="header">
+														<span class="title">ARM Development</span>
+														<span class="percent"></span>
+													</span>
+													<div class="taskProgress progressSlim greenLight">63</div> 
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<span class="header">
+														<span class="title">ARM Development</span>
+														<span class="percent"></span>
+													</span>
+													<div class="taskProgress progressSlim orange">80</div> 
+												</a>
+											</li>
+											<li>
+												<a class="dropdown-menu-sub-footer">View all tasks</a>
+											</li>	
+										</ul>
+									</li>
+									<!-- end: Notifications Dropdown -->
+									<!-- start: Message Dropdown -->
+									<li class="dropdown hidden-phone">
+										<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+											<i class="icon-envelope"></i>
+											<span class="badge red">
+												4 </span>
+											</a>
+											<ul class="dropdown-menu messages">
+												<li class="dropdown-menu-title">
+													<span>You have 9 messages</span>
+													<a href="#refresh"><i class="icon-repeat"></i></a>
+												</li>	
+												<li>
+													<a href="#">
+														<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
+														<span class="header">
+															<span class="from">
+																Dennis Ji
+															</span>
+															<span class="time">
+																6 min
+															</span>
+														</span>
+														<span class="message">
+															Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+														</span>  
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
+														<span class="header">
+															<span class="from">
+																Dennis Ji
+															</span>
+															<span class="time">
+																56 min
+															</span>
+														</span>
+														<span class="message">
+															Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+														</span>  
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
+														<span class="header">
+															<span class="from">
+																Dennis Ji
+															</span>
+															<span class="time">
+																3 hours
+															</span>
+														</span>
+														<span class="message">
+															Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+														</span>  
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
+														<span class="header">
+															<span class="from">
+																Dennis Ji
+															</span>
+															<span class="time">
+																yesterday
+															</span>
+														</span>
+														<span class="message">
+															Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+														</span>  
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
+														<span class="header">
+															<span class="from">
+																Dennis Ji
+															</span>
+															<span class="time">
+																Jul 25, 2012
+															</span>
+														</span>
+														<span class="message">
+															Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+														</span>  
+													</a>
+												</li>
+												<li>
+													<a class="dropdown-menu-sub-footer">View all messages</a>
+												</li>	
+											</ul>
+										</li>
+
+										<!-- start: User Dropdown -->
+										<li class="dropdown">
+											<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+												<i class="halflings-icon white user"></i> Dennis Ji
+												<span class="caret"></span>
+											</a>
+											<ul class="dropdown-menu">
+												<li class="dropdown-menu-title">
+													<span>Account Settings</span>
+												</li>
+												<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
+												<li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
+											</ul>
+										</li>
+										<!-- end: User Dropdown -->
+									</ul>
+								</div>
+								<!-- end: Header Menu -->
+
+							</div>
+						</div>
+					</div>
+					<!-- start: Header -->
+
+					<div class="container-fluid-full">
+						<div class="row-fluid">
+
+							<!-- start: Main Menu -->
+							<div id="sidebar-left" class="span2">
+								<div class="nav-collapse sidebar-nav">
+									<ul class="nav nav-tabs nav-stacked main-menu">
+										<li><a href="index.php"><i class="icon-bar-chart"></i><span class="hidden-tablet">indexpage</span></a></li>	
+										<li><a href="add.php"><i class="icon-envelope"></i><span class="hidden-tablet">add page</span></a></li>
+										<li><a href="list.php"><i class="icon-tasks"></i><span class="hidden-tablet">list page</span></a></li>
+										
+										<li><a href="view.php"><i class="icon-dashboard"></i><span class="hidden-tablet">view page</span></a></li>
+										
+												
+										
+										
+									</ul>
+								</div>
+							</div>
+							<!-- end: Main Menu -->
+
+							<noscript>
+								<div class="alert alert-block span10">
+									<h4 class="alert-heading">Warning!</h4>
+									<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+								</div>
+							</noscript>
+
+							<!-- start: Content -->
+							<div id="content" class="span10">
+
+
+								<ul class="breadcrumb">
+									<li>
+										<i class="icon-home"></i>
+										<a href="index.php">Home</a> 
+										<i class="icon-angle-right"></i>
+									</li>
+									<li><a href="#">Icon</a></li>
+								</ul>
+								<div class="row-fluid sortable">
+								<div class="col-md-6">
+								<div class="box span12">
+				
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon white edit"></i><span class="break"></span>personal information</h2>
+						</div>
+						<div class="box-content">
+						<form>
+						<fieldset style="padding:70px">
+							<?php
 require "include/db_connection.php";
 $id=$_GET['id'];
 $sql="SELECT * FROM cont_master where id=$id";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
-	echo "<td>";
-	echo "<h1>All personal info</h1>";
-	echo "<br>";
-		echo "<tr>";
-		echo "<td>first_name</td>";
-		echo "<td>".$row['firstname']."</td>";
-echo "</tr>";
-echo "<tr>";
-echo "<td>last_name</td>";
-		echo "<td>".$row['lastname']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>nickname</td>";
-		echo "<td>".$row['nickname']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>gender</td>";
-		echo "<td>".$row['gender']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>mobile</td>";
-		echo "<td>".$row['mobile']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>phone</td>";
-		echo "<td>".$row['phone']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>email</td>";
-		echo "<td>".$row['email']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>address1</td>";
-		echo "<td>".$row['address1']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>address2</td>";
-		echo "<td>".$row['address2']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>city</td>";
-		echo "<td>".$row['city']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>pincode</td>";
-		echo "<td>".$row['pincode']."</td>";
-		echo "</tr>";
-		echo "</td>";
-		echo "<td>";
-		echo "<h1>Company info</h1>";
-	echo "<tr>";
-		echo "<td>company name</td>";
-		echo "<td>".$row['company_name']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>designation</td>";
-		echo "<td>".$row['designation']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>com_address</td>";
-		echo "<td>".$row['com_address']."</td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>website</td>";
-		echo "<td>".$row['website']."</td>";
-		echo "</tr>";
-		echo "</tr>";
 mysqli_close($conn);
 ?>
-		
-	</table><br>
-<a href="list.php">Back</a>
-</body>
-</html>
-<?php
+
+					
+						First name     : <?= $row['firstname'] ?> <br><br>
+					    Last name      : <?= $row['lastname'] ?><br><br>
+						Nick name      : <?= $row['nickname'] ?><br><br>
+						Gender         : <?= $row['gender'] ?><br><br>
+
+						Mobile number  : <?= $row['mobile'] ?><br><br>
+						Email id       : <?= $row['email'] ?><br>
+						Address1       : <?= $row['address1'] ?><br>
+						Address2       : <?= $row['address2'] ?><br>
+						                 
+						<br><br>
+						City           : <?= $row['city'] ?><br><br>
+						Pincode        : <?= $row['pincode'] ?><br><br>
+						
+
+
+
+						</div>
+						</div>
+						 <div class="col-md-6">
+								<div class="box span12">
+				
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon white edit"></i><span class="break"></span>company information</h2>
+						</div>
+						 
+						
+
+						
+					
+					<div class="box-content">
+						<form>
+						<fieldset style="padding:70px">
+						 Company name    : <?= $row['company_name'] ?><br><br>
+						 Email id        : <?= $row['email'] ?><br><br>
+
+						Address          : <?= $row['com_address'] ?><br> 
+                        Designation		 : <?= $row['designation'] ?>                  
+
+					<br><br>
+					 Mobile number       : <?= $row['mobile'] ?> <br><br>
+						
+
+
+
+
+
+							
+
+						</form>
+						</fieldset>
+						
+						
+
+						
+					</div>
+			
+
+					</div>
+				</div><!--/span-->
+
+			</div><!--/row-->
+                           </div>
+									
+					        </div>
+								
+							<!-- end: Content -->
+						</div><!--/#content.span10-->
+					</div><!--/fluid-row-->
+
+					<div class="clearfix"></div>
+
+					<footer>
+
+						<p>
+							<span style="text-align:left;float:left">&copy; 2013 <a href="http://themifycloud.com/downloads/janux-free-responsive-admin-dashboard-template/" alt="Bootstrap_Metro_Dashboard">JANUX Responsive Dashboard</a></span>
+
+						</p>
+
+					</footer>
+
+					<!-- start: JavaScript-->
+
+					<script src="js/jquery-1.9.1.min.js"></script>
+					<script src="js/jquery-migrate-1.0.0.min.js"></script>
+
+					<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+
+					<script src="js/jquery.ui.touch-punch.js"></script>
+
+					<script src="js/modernizr.js"></script>
+
+					<script src="js/bootstrap.min.js"></script>
+
+					<script src="js/jquery.cookie.js"></script>
+
+					<script src='js/fullcalendar.min.js'></script>
+
+					<script src='js/jquery.dataTables.min.js'></script>
+
+					<script src="js/excanvas.js"></script>
+					<script src="js/jquery.flot.js"></script>
+					<script src="js/jquery.flot.pie.js"></script>
+					<script src="js/jquery.flot.stack.js"></script>
+					<script src="js/jquery.flot.resize.min.js"></script>
+
+					<script src="js/jquery.chosen.min.js"></script>
+
+					<script src="js/jquery.uniform.min.js"></script>
+
+					<script src="js/jquery.cleditor.min.js"></script>
+
+					<script src="js/jquery.noty.js"></script>
+
+					<script src="js/jquery.elfinder.min.js"></script>
+
+					<script src="js/jquery.raty.min.js"></script>
+
+					<script src="js/jquery.iphone.toggle.js"></script>
+
+					<script src="js/jquery.uploadify-3.1.min.js"></script>
+
+					<script src="js/jquery.gritter.min.js"></script>
+
+					<script src="js/jquery.imagesloaded.js"></script>
+
+					<script src="js/jquery.masonry.min.js"></script>
+
+					<script src="js/jquery.knob.modified.js"></script>
+
+					<script src="js/jquery.sparkline.min.js"></script>
+
+					<script src="js/counter.js"></script>
+
+					<script src="js/retina.js"></script>
+
+					<script src="js/custom.js"></script>
+					<!-- end: JavaScript-->
+
+				</body>
+				</html>
+				<?php
 else: 
 	header("location:index.php");
 endif;

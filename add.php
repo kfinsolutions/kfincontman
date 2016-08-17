@@ -47,8 +47,6 @@ if($_SESSION['login'] == "1"):
 				<input type="text" name="designation"  required> <br>
 				<label>Website:</label>
 				<input type="text" name="website" required> <br>
-				<label>Website:</label>
-				<input type="text" name="website" required> <br>
 				<label>Communication Address:</label><br>
 				<textarea name="com_address" id="c_address" required></textarea><br>
 				<input type="checkbox" onclick="copyAdd()"> Same as above<br><br>
