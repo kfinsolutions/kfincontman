@@ -410,7 +410,7 @@ include "include/process1.php";
 						<h2><i class="halflings-icon white edit"></i><span class="break"></span>personal information</h2>
 						</div>
 						<div class="box-content">
-			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']).'?id='.$id ?>" method="post">
 						  <fieldset>
 						<label>First name:</label>
 				<input type="text" name="firstname" value="<?=  $firstname ?>" required> <?=  $firstnameerr ?><br>

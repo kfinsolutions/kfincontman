@@ -22,6 +22,7 @@ function number_input($b)
 			return $b;
 		}
 }
+$id=$_GET['id'];
 $firstname=$lastname=$nickname=$gender=$mobile=$phone=$email=$company_name=$designation=$address1=$address2=$city=$pincode=$website=$com_address=$pword="";
 $firstnameerr=$lastnameerr=$nicknameerr=$gendererr=$mobileerr=$phoneerr=$emailerr=$company_nameerr=$designationerr=$address1err=$address2err=$cityerr=$pincodeerr=$websiteerr=$com_addresserr=$pworderr="";
 if($_SERVER["REQUEST_METHOD"] == 'POST')
