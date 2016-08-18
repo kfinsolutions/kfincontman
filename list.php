@@ -399,8 +399,8 @@ while($row=mysqli_fetch_assoc($result))
 		echo "<td>".$row['firstname']."</td>";
 		echo "<td>".$row['lastname']."</td>";
 		echo "<td>".$row['email']."</td>";
-		echo "<td><a class=\"btn btn-default\" href='edit.php?id=".$row['id']."'>Edit</a>&nbsp;
-		<a class=\"btn btn-default\" href='view.php?id=".$row['id']."'>view</a></td>";
+		echo "<td><a class=\"btn btn-primary\" href='edit.php?id=".$row['id']."'>Edit</a>&nbsp;
+		<a class=\"btn btn-primary\" href='view.php?id=".$row['id']."'>view</a></td>";
 		echo "</tr>";
 }
 mysqli_close($conn);
@@ -410,7 +410,7 @@ mysqli_close($conn);
 							 
 							  </tbody>
 						 </table>  
-						 <button type="submit" class="btn btn-default">submit</button>		
+						 <a href='add.php' button="ADD" class="btn btn-success">ADD</a>		
 						   
 					</div>
 				</div><!--/span-->
