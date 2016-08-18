@@ -57,6 +57,7 @@ include "include/process1.php";
 	{
 		while ($row=mysqli_fetch_row($result)) 
 		{
+			$id=$row[0];
 			$firstname=$row[1];
 			$lastname=$row[2];
 			$nickname=$row[3];

@@ -72,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 		{
 			if ($firstnameerr=="" && $lastnameerr=="" && $nicknameerr=="" && $gendererr=="" && $mobileerr=="" && $phoneerr=="" && $emailerr=="" && $cityerr=="" && $pworderr=="") 
 			{
-			include "insert.php";	
+			include "update.php";	
 			}
 		}else
 		{
