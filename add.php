@@ -386,9 +386,17 @@ include "include/process2.php";
 				<input type="text" name="lastname" value="<?= "$lastname" ?>" required><?= "$lastnameerr" ?><br>
 				<label>Nick name:</label>
 				<input type="text" name="nickname" value="<?= "$nickname" ?>" required><?= "$nicknameerr" ?><br>
-				<label>Gender:</label><br>
-				<input type="radio" name="gender" value="male" required <?php if($gender=="male" || $gender==""){echo "checked";} ?>> male<br>
-				<input type="radio" name="gender" value="female" required <?php if($gender=="female"){echo "checked";} ?>> female<br>
+				<div class="control-group"> 
+				<label class="control-label">Gender</label> 
+				<div class="controls"> 
+				<label class="radio"> 
+				<input type="radio" name="gender" id="optionsRadios1" value="male" <?php if($gender=="male" || $gender==""){echo "checked";} ?>> Male 
+				</label> 
+				<div style="clear:both"></div> 
+				<label class="radio"> 
+				<input type="radio" name="gender" id="optionsRadios2" value="female" <?php if($gender=="female"){echo "checked";} ?>> Female
+				</label> 
+				</div> </div>
 				<label>Mobile number:</label>
 				<input type="text" name="mobile" value="<?= "$mobile" ?>" required><?= "$mobileerr" ?><br>
 				<label>Phone number:</label>
@@ -402,7 +410,7 @@ include "include/process2.php";
 				<label>Pincode:</label>
 				<input type="text" name="pincode" id="pincode" value="<?= "$pincode" ?>" required><?= "$pincodeerr" ?><br>
 				<label>Email:</label>
-				<input type="text" name="email"  required><?= "$emailerr" ?><br>
+				<input type="text" name="email" id="email" value="<?= "$email" ?>" required><?= "$emailerr" ?><br>
                 </fieldset>
 
 						</div> 
@@ -426,7 +434,7 @@ include "include/process2.php";
 				<textarea name="com_address" id="c_address"  required><?= $com_address ?></textarea><br>
 				<input type="checkbox" onclick="copyAdd()"> Same as above<br><br>
 				<label>Password</label>
-				<input type="password" name="pword" required> <br>
+				<input type="password" name="pword" required><?= $pworderr ?> <br>
 				<label>Conform password</label>
 				<input type="password" name="pword2" required><br>
 				 <button type="submit" class="btn btn-default">submit</button><br><br><br>  

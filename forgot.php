@@ -29,12 +29,3 @@ else
 	mysqli_close($conn);
 }
  ?>
-<html>
-<body>
-<form method="post" action ="#">
-email:<br/>
-<input type="email" name="email"><br/>
-<input type="submit" name="submit" value="forget_password">
-</form>
-</body>
-</html>
