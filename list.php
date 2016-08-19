@@ -1,6 +1,7 @@
 <?php 
 session_start();
-if($_SESSION['login'] == "1"):
+$login_status=$_SESSION['login']:
+echo $login_status;
 ?>
 <!DOCTYPE html>
 <html lang="en">
