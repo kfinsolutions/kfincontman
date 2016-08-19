@@ -10,7 +10,7 @@ function text_input($a)
 {
 	if(!preg_match("/^[a-z A-Z]*$/",$a))
 		{
-			$b="This field consists of albhabets only";
+			$a="This field consists of albhabets only";
 			return $a;
 		}
 }
@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 		$pincodeerr = number_input($pincode);
 		$websiteerr = text_input($website);
 		$com_addresserr = text_input($com_address);
-		if ($pword!=$pword2) 
+		if ($pword != $pword2) 
 		{
 			$pworderr="Detect mismatch Conform password";
 		}

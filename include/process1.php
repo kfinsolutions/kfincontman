@@ -10,6 +10,7 @@ function text_input($a)
 {
 	if(!preg_match("/^[a-z A-Z]*$/",$a))
 		{
+			$a="This field consists of albhabets only";
 			return $a;
 		}
 }
@@ -17,9 +18,11 @@ function number_input($b)
 {
 	if(!preg_match("/^[0-9]*$/",$b))
 		{
+			$b="This field consists of numbers only";
 			return $b;
 		}
 }
+$id=$_GET['id'];
 $firstname=$lastname=$nickname=$gender=$mobile=$phone=$email=$company_name=$designation=$address1=$address2=$city=$pincode=$website=$com_address=$pword="";
 $firstnameerr=$lastnameerr=$nicknameerr=$gendererr=$mobileerr=$phoneerr=$emailerr=$company_nameerr=$designationerr=$address1err=$address2err=$cityerr=$pincodeerr=$websiteerr=$com_addresserr=$pworderr="";
 if($_SERVER["REQUEST_METHOD"] == 'POST')
@@ -58,16 +61,23 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 		if ($pword!=$pword2) 
 		{
 			$pworderr="Detect mismatch Conform password";
-			echo $pworderr;
 		}
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) 
 		{
 			$emailerr="Invalid email format";
-			echo $emailerr;
 		}
-		if ($firstnameerr=="" && $lastnameerr=="" && $nicknameerr=="" && $gendererr=="" && $mobileerr=="" && $phoneerr=="" && $emailerr=="" && $cityerr=="" && $pworderr=="") 
+		include "db_connection.php";
+		$sql="SELECT email FROM cont_master where email='$email' AND id!=$id";
+		$result=mysqli_query($conn,$sql);
+		if(mysqli_num_rows($result)==0)
 		{
+			if ($firstnameerr=="" && $lastnameerr=="" && $nicknameerr=="" && $gendererr=="" && $mobileerr=="" && $phoneerr=="" && $emailerr=="" && $cityerr=="" && $pworderr=="") 
+			{
 			include "update.php";	
+			}
+		}else
+		{
+			$emailerr="Email already exists";
 		}
 	}	
 }	
