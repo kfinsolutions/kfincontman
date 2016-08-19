@@ -268,11 +268,8 @@
 								<li class="dropdown-menu-title">
  									<span>Account Settings</span>
 								</li>
-<<<<<<< HEAD
 								<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-=======
 								<li><a href="view.php?id=<?php echo $_SESSION['id'] ?>"><i class="halflings-icon user"></i> Profile</a></li>
->>>>>>> ganesh
 								<li><a href="index.php?action=logout"><i class="halflings-icon off"></i> Logout</a></li>
 							</ul>
 						</li>
