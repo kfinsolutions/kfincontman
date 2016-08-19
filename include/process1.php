@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST')
 		$com_addresserr = text_input($com_address);
 		if ($pword!=$pword2) 
 		{
-			$pworderr="Detect mismatch Conform password";
+			$pworderr="Detect mismatch Confirm password";
 		}
 		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) 
 		{
