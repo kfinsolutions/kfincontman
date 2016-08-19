@@ -9,7 +9,7 @@ if (isset($_SESSION['id'])) {
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title>KFIN CONTACT MANAGER</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -77,7 +77,7 @@ if (isset($_SESSION['id'])) {
 							
 
 							<div class="button-login">	
-								<button type="submit" name="login" value="submit" class="btn btn-primary">Login</button>
+								<button type="submit" name="login" value="login" class="btn btn-primary">Login</button>
 							</div>
 							
 					</form>
