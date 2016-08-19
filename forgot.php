@@ -1,7 +1,7 @@
 <?php 
-if (isset($_POST['submit'])) {
+if (isset($_POST['forgot'])) {
 require "include/db_connection.php";
-$email=$_POST['email'];
+	$email=$_POST['email'];
 	$sql="SELECT id from cont_master where email='".$email."'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
@@ -9,8 +9,12 @@ $email=$_POST['email'];
 	$count=count($row);
 
 if ($count!=0) {
-$new_password=rand(100000 , 999999);
-$sql = "UPDATE cont_master set pword='".$new_password."' WHERE id='".$id."'";
+$new_password="1234";
+//rand(100000 , 999999);
+
+	$options=['cost'=>9];
+	$hash_password=password_hash($new_password,PASSWORD_BCRYPT,$options);
+$sql = "UPDATE cont_master set pword='".$hash_password."' WHERE id='".$id."'";
 if(mysqli_query($conn, $sql)){
 	$subject="login information";
 	$message="your message has been changed to $new_password";
