@@ -68,10 +68,10 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.php">Home</a> 
+					<a href="dashboard.php">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Tables</a></li>
+				<li><a href="#">View Contact</a></li>
 			</ul>
 
 			<div class="row-fluid sortable">		
@@ -96,7 +96,7 @@
 						</style>
 						  <thead>
 							  <tr>
-							      <th>personal details</th>
+							      <th>Personal Details</th>
 								 
 							  </tr>
 						  </thead>   
@@ -182,13 +182,13 @@ mysqli_close($conn);
 						</style>
 						  <thead>
 							  <tr>
-							      <th>company details</th>
+							      <th>Company Details</th>
 								 
 							  </tr>
 						  </thead>   
 						  <tbody>
 							<tr>
-								<td>comapny name</td>
+								<td>Comapny Name</td>
 								<td><?= $row['company_name'] ?></td>
 								
 							</tr>
