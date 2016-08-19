@@ -1,4 +1,8 @@
-<?php include "include/processlogin.php"; ?>
+<?php include "include/processlogin.php";
+if (isset($_SESSION['id'])) {
+	header("location:dashboard.php");
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,38 +112,11 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           <h1 class="text-center">FORGOT PASSWORD</h1>
       </div>
-<?php 
-if (isset($_POST['forgot'])) {
-require "include/db_connection.php";
-$email=$_POST['email'];
-	$sql="SELECT id from cont_master where email='".$email."'";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	$id = $row['id'];
-	$count=count($row);
+<?php
+include "forgot.php";
 
-if ($count!=0) {
-$new_password=rand(100000 , 999999);
-$sql = "UPDATE cont_master set pword='".$new_password."' WHERE id='".$id."'";
-if(mysqli_query($conn, $sql)){
-	$subject="login information";
-	$message="your message has been changed to $new_password";
-	$from="from:ganesh@gmail.com";
-	//mail($email,$subject,$message,$from);
-	echo "your password has been mailed to you.";
-} else {
-	echo "Error resetting password";
-}
-}
-else
-{
-	echo "this mail does not exist";
-
-}
-	mysqli_close($conn);
-}
  ?>
-      <div class="modal-body">
+       <div class="modal-body">
           <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">

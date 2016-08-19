@@ -1,3 +1,7 @@
+<?php
+session_start();
+if($_SESSION['login']=="1"):
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -795,3 +799,8 @@
 	
 </body>
 </html>
+<?php
+else:
+	header("location:index.php");
+endif;
+?>
