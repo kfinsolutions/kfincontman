@@ -19,7 +19,7 @@ if(mysqli_query($conn, $sql)){
 	$subject="login information";
 	$message="your message has been changed to $new_password";
 	$from="from:ganesh@gmail.com";
-	//mail($email,$subject,$message,$from);
+	mail($email,$subject,$message,$from);
 	echo "your password has been mailed to you.";
 } else {
 	echo "Error resetting password";
